@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <cs50.h>
+#include <math.h>
+
+int main(void)
+
+{
+    int vizeNotu, finalNotu;
+    
+    do
+    {
+        vizeNotu = get_int("Vize Notunuzu Giriniz: ");
+        
+    }
+    while(vizeNotu<0 || vizeNotu>100);
+    do
+    {
+        finalNotu = get_int("Final Notunuzu Giriniz: ");
+    }
+    while(finalNotu<0 || finalNotu>100);
+
+    printf("Vize Notu: %i Final Notu: %i\n", vizeNotu, finalNotu);
+
+    float ortalama = (vizeNotu*(40) + finalNotu*(60)) / 100;
+
+    printf("Ortalama: %2.f\n", ortalama);
+
+    if(ortalama>=85)
+    {
+        printf("Harf Notu:AA\n");
+    }
+    else if(ortalama>=70)
+    {
+        printf("Harf Notu:BB\n");
+    }
+    else if(ortalama>=60)
+    {
+        printf("Harf Notu:CC\n");
+    }
+    else
+    {
+        printf("FF\n");
+    }
+}
